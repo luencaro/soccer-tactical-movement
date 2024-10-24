@@ -18,14 +18,27 @@ import java.util.Set;
  */
 
 //Graph class
-public class Graph {
+public class MyGraph {
     
     //Since we are usually working with diagraphs, we'll use hashmap to simulate the beghavior of the graph
     private Map<Vertex, List<Vertex>> adjVertices;
     
     //Constructor
-    public Graph() {
+    public MyGraph() {
         this.adjVertices = new HashMap<>();
+    }
+
+    public Map<Vertex, List<Vertex>> getAdjVertices() {
+        return adjVertices;
+    }
+
+    public void setAdjVertices(Map<Vertex, List<Vertex>> adjVertices) {
+        this.adjVertices = adjVertices;
+    }
+    
+    // New Method: Get all vertices in the graph
+    public List<Vertex> getVertices() {
+        return new ArrayList<>(adjVertices.keySet());
     }
     
     // Method to add vertices

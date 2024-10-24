@@ -7,11 +7,12 @@ package main;
 import core.models.Field;
 import core.models.Player; 
 import core.models.PlayerLoader;
-import graph.Graph;
+import graph.MyGraph;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.graphstream.graph.*;
+import org.graphstream.graph.implementations.*;
 /**
  *
  * @author lcaba
@@ -19,6 +20,20 @@ import java.util.List;
 public class Main {
     
     public static void main(String[] args) throws IOException {
+        
+        
+        System.setProperty("org.graphstream.ui", "swing");
+		
+//        Graph graph = new SingleGraph("Tutorial 1");
+//
+//        graph.addNode("A");
+//        graph.addNode("B");
+//        graph.addNode("C");
+//        graph.addEdge("AB", "A", "B");
+//        graph.addEdge("BC", "B", "C");
+//        graph.addEdge("CA", "C", "A");
+//
+//        graph.display();
         
         String path = "C:/Users/lcaba/OneDrive/Desktop/jugadores.csv";
         
@@ -73,7 +88,7 @@ public class Main {
         };
         
         // Create the graph
-        Graph graph = new Graph();
+        MyGraph graph = new MyGraph();
         graph.createGraphFromAdjacencyMatrix(adjacencyMatrix2, p);
 
         // Print the graph
@@ -111,5 +126,7 @@ public class Main {
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println(graph.areConnected(startPlayer, endPlayer));
         
+        
+        field.showGraphVisualization();
     }
 }

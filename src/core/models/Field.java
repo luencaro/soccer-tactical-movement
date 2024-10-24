@@ -4,7 +4,8 @@
  */
 package core.models;
 
-import graph.Graph;
+import graph.GraphVisualizer;
+import graph.MyGraph;
 import graph.Vertex;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,29 +20,29 @@ import java.util.PriorityQueue;
  */
 public class Field {
     //Atributes
-    private Graph field;
+    private MyGraph field;
     private ArrayList<Player> players;
     String strategy;
     
     //Constructors
-    public Field(Graph field) {
-        this.field = new Graph();
+    public Field(MyGraph field) {
+        this.field = new MyGraph();
         this.players = new ArrayList();
         this.strategy = "possesion"; //deafult startegy
     }
     
-//    public Field(Graph field, String filepath) {
-//        this.field = new Graph();
+//    public Field(MyGraph field, String filepath) {
+//        this.field = new MyGraph();
 //        this.players = (ArrayList<Player>) PlayerLoader.loadPlayersFromCSV(filepath);
 //        this.strategy = "possesion"; //deafult startegy
 //    }
     
     //Getters and setters
-    public Graph getField() {
+    public MyGraph getField() {
         return field;
     }
 
-    public void setField(Graph field) {
+    public void setField(MyGraph field) {
         this.field = field;
     }
 
@@ -238,6 +239,9 @@ public class Field {
         Collections.reverse(optimalPath); // Reverse to get the correct order
         return optimalPath;
     }
-
+    
+    public void showGraphVisualization() {
+        GraphVisualizer.visualizeGraph(this.field);
+    }
     
 }
