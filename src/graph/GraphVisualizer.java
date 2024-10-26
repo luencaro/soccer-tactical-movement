@@ -4,11 +4,17 @@
  */
 package graph;
 
+import java.awt.BorderLayout;
+import java.awt.Component;
 import java.util.Random;
-import org.graphstream.graph.Graph;
-import org.graphstream.graph.implementations.SingleGraph;
+import javax.swing.JPanel;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.Edge;
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.implementations.SingleGraph;
+import org.graphstream.ui.view.View;
+import org.graphstream.ui.view.Viewer;
+
 
 public class GraphVisualizer {
 
@@ -24,7 +30,7 @@ public class GraphVisualizer {
         }
 
         // Definir los colores para las aristas
-        String[] colors = {"#FFB74D, #FF9800, #F57C00"};
+        String[] colors = {"#993300"};
         Random random = new Random();
 
         // Añadir aristas basadas en la lista de adyacencia
@@ -46,17 +52,17 @@ public class GraphVisualizer {
         }
 
         // Aplicar estilo avanzado al grafo para mejor visualización
-String css = """
+    String css = """
     graph {
         padding: 40px;
         fill-mode: gradient-vertical;
-        fill-color: gray, white, white, white, white, gray; // Gradiente de naranja para el fondo
+        fill-color: #ffffcc; // Gradiente de naranja para el fondo
     }
     
     node {
         size: 15px;
         fill-mode: gradient-vertical;
-        fill-color: #FFB74D, #FF9800, #F57C00; // Gradiente de naranja para nodos
+        fill-color: #ffffcc, #ff6600, #993300; // Gradiente de naranja para nodos
         stroke-mode: plain;
         stroke-color: black;
         shadow-mode: plain;
@@ -75,20 +81,31 @@ String css = """
         arrow-shape: diamond;
         size: 1px;
         fill-mode: gradient-vertical;
-        fill-color: #FFB74D, #FF9800, #F57C00; // Gradiente de grises para aristas
+        fill-color: #993300; // Gradiente de grises para aristas
     }
 """;
 
-// Aplicar el CSS al grafo
-graphStream.setAttribute("ui.stylesheet", css);
+        // Aplicar el CSS al grafo
+        graphStream.setAttribute("ui.stylesheet", css);
 
         graphStream.setAttribute("ui.quality");
         graphStream.setAttribute("ui.antialias");
 
         // Mostrar el grafo
-        graphStream.display();
+        //graphStream.display();
 
         return graphStream;
+    }
+    
+    public static void addGraphToPanel(Graph graph, JPanel panel) {
+        //System.setProperty("org.graphstream.ui", "swing");
+        Viewer viewer = graph.display(); // Create a viewer for the graph
+        viewer.enableAutoLayout(); // Enable automatic layout
+        //viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+        View view = viewer.getDefaultView(); // Get the default view
+        view.openInAFrame(false);
+        // Add the GraphStream view to the JPanel
+        panel.add((Component) view);
     }
 }
 

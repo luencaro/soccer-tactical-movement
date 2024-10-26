@@ -78,6 +78,21 @@ public class MyGraph {
         }
     }
     
+    public static MyGraph GraphFromList(List<Player> list) {
+        MyGraph graph = new MyGraph();
+        for(Player p : list) {
+            graph.addVertex(p);
+        }
+        // Agregar las aristas entre los jugadores en el camino óptimo
+        for (int i = 0; i < list.size() - 1; i++) {
+            Player from = list.get(i);
+            Player to = list.get(i + 1);
+            graph.addEdge(from, to); // Suponiendo que tienes un método para agregar aristas
+        }
+
+        return graph;
+    }
+    
     
     
     public boolean areConnected(Player player1, Player player2) {

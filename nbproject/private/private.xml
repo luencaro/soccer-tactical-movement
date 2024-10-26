@@ -5,9 +5,10 @@
         <group>
             <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/core/models/Player.java</file>
             <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/graph/MyGraph.java</file>
-            <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/core/views/View.java</file>
             <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/main/Main.java</file>
-            <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/core/models/PlayerLoader.java</file>
+            <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/core/views/MainView.java</file>
+            <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/core/controllers/PlayerLoaderController.java</file>
+            <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/core/controllers/FieldController.java</file>
             <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/core/models/Field.java</file>
             <file>file:/C:/Users/lcaba/OneDrive/Documents/NetBeansProjects/soccer%20tactical%20movement/src/graph/GraphVisualizer.java</file>
         </group>
