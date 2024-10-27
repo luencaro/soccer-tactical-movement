@@ -6,10 +6,12 @@ package core.controllers;
 
 import core.controllers.utils.Response;
 import core.controllers.utils.Status;
+import core.models.Field;
 import core.models.Player;
 import core.models.PlayerLoader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
@@ -19,8 +21,13 @@ import java.util.List;
  */
 public class PlayerLoaderController {
     
-    public static Response loadPlayersFromCSV(String filepath) {
+    public static Response loadPlayersFromCSV(String filepath, Field field) {
         try {
+            
+            if (filepath.equals("") || filepath == null) {
+                return new Response("Please provide a .csv file.", Status.BAD_REQUEST);
+            }
+            
             // Verificar que el archivo tenga la extensión .csv
             if (!filepath.toLowerCase().endsWith(".csv")) {
                 return new Response("Invalid file type. Please provide a .csv file.", Status.BAD_REQUEST);
@@ -35,6 +42,7 @@ public class PlayerLoaderController {
             }
             
             // Si todo es correcto, retornar los jugadores cargados
+            field.setPlayers((ArrayList<Player>) players);
             return new Response("Players loaded successfully", Status.OK, players);
             
         } catch(FileNotFoundException e) { 
@@ -54,7 +62,7 @@ public class PlayerLoaderController {
     // Método para validar la lista de jugadores
     private static boolean validatePlayers(List<Player> players) {
         // Validar cantidad de jugadores
-        if (players == null || players.size() < 7 || players.size() > 11) {
+        if (players == null || players.size() != 11) {
             return false;
         }
         
