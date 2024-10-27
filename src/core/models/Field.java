@@ -4,7 +4,8 @@
  */
 package core.models;
 
-import graph.Graph;
+import graph.GraphVisualizer;
+import graph.MyGraph;
 import graph.Vertex;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,30 +20,30 @@ import java.util.PriorityQueue;
  */
 public class Field {
     //Atributes
-    private Graph field;
+    private MyGraph myGraph;
     private ArrayList<Player> players;
     String strategy;
     
     //Constructors
-    public Field(Graph field) {
-        this.field = new Graph();
+    public Field() {
+        this.myGraph = new MyGraph();
         this.players = new ArrayList();
         this.strategy = "possesion"; //deafult startegy
     }
     
-//    public Field(Graph field, String filepath) {
-//        this.field = new Graph();
+//    public Field(MyGraph myGraph, String filepath) {
+//        this.myGraph = new MyGraph();
 //        this.players = (ArrayList<Player>) PlayerLoader.loadPlayersFromCSV(filepath);
 //        this.strategy = "possesion"; //deafult startegy
 //    }
     
     //Getters and setters
-    public Graph getField() {
-        return field;
+    public MyGraph getMyGraph() {
+        return myGraph;
     }
 
-    public void setField(Graph field) {
-        this.field = field;
+    public void setMyGraph(MyGraph myGraph) {
+        this.myGraph = myGraph;
     }
 
     public ArrayList<Player> getPlayers() {
@@ -65,14 +66,14 @@ public class Field {
         this.strategy = strategy;
     }   
     
-    //Method to ferify if the player is in the field
-    public boolean isPlayerInField(String playerName) {
+    //Method to ferify if the player is in the myGraph
+    public Player isPlayerInField(String playerName) {
         for (Player player : players) {
             if (player.getName().equalsIgnoreCase(playerName)) {
-                return true; // The player is in the field
+                return player; // The player is in the myGraph
             }
         }
-        return false; // The player is not in the field
+        return null; // The player is not in the myGraph
     }
 
     
@@ -126,7 +127,7 @@ public class Field {
             Player currentPlayer = players.get(current);
 
             // Get adjacent players
-            List<Vertex> adjVertices = field.getAdjVertices(currentPlayer);
+            List<Vertex> adjVertices = myGraph.getAdjVertices(currentPlayer);
             for (Vertex vertex : adjVertices) {
                 Player neighborPlayer = vertex.getData(); // Assuming Vertex has a method to get the Player
                 int neighborIndex = players.indexOf(neighborPlayer);
@@ -156,9 +157,9 @@ public class Field {
     
     
     // Method to find the optimal path based on the specified strategy from startPlayer to endPlayer
-    public List<Player> findOptimalPath(Player startPlayer, Player endPlayer) {
-        int startPlayerIndex = players.indexOf(startPlayer);
-        int endPlayerIndex = players.indexOf(endPlayer);
+    public List<Player> findOptimalPath(String startPlayer, String endPlayer) {
+        int startPlayerIndex = players.indexOf(isPlayerInField(startPlayer));
+        int endPlayerIndex = players.indexOf(isPlayerInField(endPlayer));
 
         if (startPlayerIndex == -1) {
             throw new IllegalArgumentException("Start player not found in the team.");
@@ -214,7 +215,7 @@ public class Field {
             }
 
             // Get adjacent players
-            List<Vertex> adjVertices = field.getAdjVertices(currentPlayer);
+            List<Vertex> adjVertices = myGraph.getAdjVertices(currentPlayer);
             for (Vertex vertex : adjVertices) {
                 Player neighborPlayer = vertex.getData();
                 int neighborIndex = players.indexOf(neighborPlayer);
@@ -238,6 +239,10 @@ public class Field {
         Collections.reverse(optimalPath); // Reverse to get the correct order
         return optimalPath;
     }
-
+      
+    public void showGraphVisualization() {
+        System.setProperty("org.graphstream.ui", "swing");
+        GraphVisualizer.visualizeGraph(this.myGraph);
+    }
     
 }
