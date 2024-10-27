@@ -60,7 +60,6 @@ public class MainView extends javax.swing.JFrame {
         upload_btn = new javax.swing.JLabel();
         Results = new javax.swing.JPanel();
         greetin_lbl1 = new javax.swing.JLabel();
-        switch_btn = new javax.swing.JLabel();
         home_btn3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         img1_lbl = new javax.swing.JLabel();
@@ -70,20 +69,17 @@ public class MainView extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         greetin_lbl2 = new javax.swing.JLabel();
         greetin_lbl3 = new javax.swing.JLabel();
-        home_btn4 = new javax.swing.JLabel();
         greetin_lbl4 = new javax.swing.JLabel();
         Strat2 = new javax.swing.JPanel();
         choose_lbl = new javax.swing.JLabel();
         Opt1_btn2 = new javax.swing.JLabel();
         Opt2_btn2 = new javax.swing.JLabel();
         Opt3_btn2 = new javax.swing.JLabel();
-        home_btn2 = new javax.swing.JLabel();
         Strat1 = new javax.swing.JPanel();
         choose_lbl1 = new javax.swing.JLabel();
         Opt1_btn = new javax.swing.JLabel();
         Opt2_btn = new javax.swing.JLabel();
         Opt3_btn = new javax.swing.JLabel();
-        home_btn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -173,23 +169,7 @@ public class MainView extends javax.swing.JFrame {
         greetin_lbl1.setText("End Player");
         greetin_lbl1.setFocusTraversalPolicyProvider(true);
         greetin_lbl1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Results.add(greetin_lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 140, 80, 20));
-
-        switch_btn.setBackground(new java.awt.Color(255, 102, 0));
-        switch_btn.setFont(new java.awt.Font("Sergio Trendy", 0, 24)); // NOI18N
-        switch_btn.setForeground(new java.awt.Color(255, 255, 204));
-        switch_btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        switch_btn.setText("Change Strat");
-        switch_btn.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 102, 0), new java.awt.Color(153, 51, 0)));
-        switch_btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        switch_btn.setInheritsPopupMenu(false);
-        switch_btn.setOpaque(true);
-        switch_btn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                switch_btnMousePressed(evt);
-            }
-        });
-        Results.add(switch_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 370, 220, 79));
+        Results.add(greetin_lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 260, 80, 20));
 
         home_btn3.setBackground(new java.awt.Color(255, 102, 0));
         home_btn3.setFont(new java.awt.Font("Sergio Trendy", 0, 18)); // NOI18N
@@ -205,7 +185,7 @@ public class MainView extends javax.swing.JFrame {
                 home_btn3MousePressed(evt);
             }
         });
-        Results.add(home_btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 180, 220, 50));
+        Results.add(home_btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 300, 220, 50));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 153));
         jPanel3.setForeground(new java.awt.Color(255, 204, 204));
@@ -236,17 +216,16 @@ public class MainView extends javax.swing.JFrame {
         Results.add(img1_lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 300, 300));
 
         jTextField1.setBackground(new java.awt.Color(225, 225, 153));
-        jTextField1.setForeground(new java.awt.Color(225, 204, 204));
         jTextField1.setCaretColor(new java.awt.Color(225, 204, 204));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        Results.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 120, -1));
+        Results.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 220, 120, -1));
 
         jTextField2.setBackground(new java.awt.Color(225, 225, 153));
-        Results.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 140, 120, -1));
+        Results.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 260, 120, -1));
 
         greetin_lbl2.setBackground(new java.awt.Color(153, 51, 0));
         greetin_lbl2.setFont(new java.awt.Font("Sergio Trendy", 0, 14)); // NOI18N
@@ -263,26 +242,7 @@ public class MainView extends javax.swing.JFrame {
         greetin_lbl3.setText("Start Player");
         greetin_lbl3.setFocusTraversalPolicyProvider(true);
         greetin_lbl3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Results.add(greetin_lbl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 100, 90, 20));
-
-        home_btn4.setBackground(new java.awt.Color(255, 102, 0));
-        home_btn4.setFont(new java.awt.Font("Sergio Trendy", 0, 24)); // NOI18N
-        home_btn4.setForeground(new java.awt.Color(255, 255, 204));
-        home_btn4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        home_btn4.setText("Home");
-        home_btn4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 102, 0), new java.awt.Color(153, 51, 0)));
-        home_btn4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        home_btn4.setInheritsPopupMenu(false);
-        home_btn4.setOpaque(true);
-        home_btn4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                home_btn4MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                home_btn4MousePressed(evt);
-            }
-        });
-        Results.add(home_btn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 260, 220, 79));
+        Results.add(greetin_lbl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 220, 90, 20));
 
         greetin_lbl4.setBackground(new java.awt.Color(153, 51, 0));
         greetin_lbl4.setFont(new java.awt.Font("Sergio Trendy", 0, 36)); // NOI18N
@@ -352,22 +312,6 @@ public class MainView extends javax.swing.JFrame {
         });
         Strat2.add(Opt3_btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 330, 50));
 
-        home_btn2.setBackground(new java.awt.Color(255, 102, 0));
-        home_btn2.setFont(new java.awt.Font("Sergio Trendy", 0, 24)); // NOI18N
-        home_btn2.setForeground(new java.awt.Color(255, 255, 204));
-        home_btn2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        home_btn2.setText("Back");
-        home_btn2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 102, 0), new java.awt.Color(153, 51, 0)));
-        home_btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        home_btn2.setInheritsPopupMenu(false);
-        home_btn2.setOpaque(true);
-        home_btn2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                home_btn2MousePressed(evt);
-            }
-        });
-        Strat2.add(home_btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 220, 79));
-
         DaPanel.add(Strat2, "card3");
 
         Strat1.setBackground(new java.awt.Color(255, 255, 204));
@@ -427,22 +371,6 @@ public class MainView extends javax.swing.JFrame {
         });
         Strat1.add(Opt3_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 330, 50));
 
-        home_btn.setBackground(new java.awt.Color(255, 102, 0));
-        home_btn.setFont(new java.awt.Font("Sergio Trendy", 0, 24)); // NOI18N
-        home_btn.setForeground(new java.awt.Color(255, 255, 204));
-        home_btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        home_btn.setText("Back");
-        home_btn.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 102, 0), new java.awt.Color(153, 51, 0)));
-        home_btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        home_btn.setInheritsPopupMenu(false);
-        home_btn.setOpaque(true);
-        home_btn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                home_btnMousePressed(evt);
-            }
-        });
-        Strat1.add(home_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 220, 79));
-
         DaPanel.add(Strat1, "card3");
 
         getContentPane().add(DaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -488,14 +416,6 @@ public class MainView extends javax.swing.JFrame {
         text_lbl.setText(file);
     }//GEN-LAST:event_upload_btnMousePressed
 
-    private void home_btnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_home_btnMousePressed
-        // TODO add your handling code here:
-        DaPanel.removeAll();
-        DaPanel.add(Home);
-        DaPanel.repaint();
-        DaPanel.revalidate();
-    }//GEN-LAST:event_home_btnMousePressed
-
     private void Opt1_btnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Opt1_btnMousePressed
         // TODO add your handling code here:
         field.setStrategy("speed");
@@ -522,14 +442,6 @@ public class MainView extends javax.swing.JFrame {
         DaPanel.repaint();
         DaPanel.revalidate();
     }//GEN-LAST:event_Opt3_btnMousePressed
-
-    private void home_btn2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_home_btn2MousePressed
-        // TODO add your handling code here:
-        DaPanel.removeAll();
-        DaPanel.add(Strat1);
-        DaPanel.repaint();
-        DaPanel.revalidate();
-    }//GEN-LAST:event_home_btn2MousePressed
 
     private void Opt1_btn2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Opt1_btn2MousePressed
         // TODO add your handling code here:
@@ -609,32 +521,12 @@ public class MainView extends javax.swing.JFrame {
             GraphVisualizer.addGraphToPanel(GraphVisualizer.visualizeGraph(MyGraph.GraphFromList(d)), jPanel3);
             jPanel3.repaint();
             jPanel3.revalidate();
-        }
-        
+        }   
     }//GEN-LAST:event_home_btn3MousePressed
-
-    private void switch_btnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_switch_btnMousePressed
-        // TODO add your handling code here:
-        jPanel3.removeAll();
-        DaPanel.removeAll();
-        DaPanel.add(Strat1);
-        DaPanel.repaint();
-        DaPanel.revalidate();
-    }//GEN-LAST:event_switch_btnMousePressed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        jPanel3.removeAll();
-        jPanel1.removeAll();
-        DaPanel.removeAll();
-        DaPanel.add(Home);
-        DaPanel.repaint();
-        DaPanel.revalidate();
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void home_btn4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_home_btn4MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_home_btn4MousePressed
 
     private void Opt3_btn2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Opt3_btn2MousePressed
         // TODO add your handling code here:
@@ -665,10 +557,6 @@ public class MainView extends javax.swing.JFrame {
         jPanel1.revalidate();
     }//GEN-LAST:event_Opt3_btn2MousePressed
 
-    private void home_btn4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_home_btn4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_home_btn4MouseExited
-
     /**
      * @param args the command line arguments
      */
@@ -694,10 +582,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel greetin_lbl2;
     private javax.swing.JLabel greetin_lbl3;
     private javax.swing.JLabel greetin_lbl4;
-    private javax.swing.JLabel home_btn;
-    private javax.swing.JLabel home_btn2;
     private javax.swing.JLabel home_btn3;
-    private javax.swing.JLabel home_btn4;
     private javax.swing.JLabel img1_lbl;
     private javax.swing.JLabel img1_lbl1;
     private javax.swing.JPanel jPanel1;
@@ -705,7 +590,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel start_btn;
-    private javax.swing.JLabel switch_btn;
     private javax.swing.JLabel text_lbl;
     private javax.swing.JLabel upload_btn;
     // End of variables declaration//GEN-END:variables

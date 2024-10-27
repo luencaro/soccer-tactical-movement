@@ -21,18 +21,17 @@ public class GraphVisualizer {
     public static Graph visualizeGraph(MyGraph customGraph) {
         // Crear un nuevo GraphStream graph
         Graph graphStream = new SingleGraph("Football Field");
-
+        graphStream.clear();
         // Añadir nodos al grafo de GraphStream desde el grafo personalizado
         for (Vertex vertex : customGraph.getVertices()) {
             Node node = graphStream.addNode(vertex.getData().getName());
-            // Configurar estilos para el nodo
+            //Configurar estilos para el nodo
             node.setAttribute("ui.label", vertex.getData().getName()); // Mostrar el nombre del jugador
         }
 
         // Definir los colores para las aristas
         String[] colors = {"#993300"};
         Random random = new Random();
-
         // Añadir aristas basadas en la lista de adyacencia
         for (Vertex vertex : customGraph.getVertices()) {
             String vertexName = vertex.getData().getName();
@@ -90,9 +89,6 @@ public class GraphVisualizer {
 
         graphStream.setAttribute("ui.quality");
         graphStream.setAttribute("ui.antialias");
-
-        // Mostrar el grafo
-        //graphStream.display();
 
         return graphStream;
     }

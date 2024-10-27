@@ -62,7 +62,7 @@ public class PlayerLoaderController {
     // Método para validar la lista de jugadores
     private static boolean validatePlayers(List<Player> players) {
         // Validar cantidad de jugadores
-        if (players == null || players.size() < 7 || players.size() > 11) {
+        if (players == null || players.size() != 11) {
             return false;
         }
         
